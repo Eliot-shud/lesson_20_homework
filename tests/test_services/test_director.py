@@ -11,10 +11,10 @@ class TestDirectorService:
 
     def test_get_one(self):
         director = self.director_service.get_one(1)
-        assert director.id is not None
+        assert director is not None
         assert director.name is not None
         assert director.id == 1
-        assert director.name == 'Александр'
+        assert director.name == 'Director 1'
 
     def test_get_all(self):
         directors = self.director_service.get_all()
@@ -22,13 +22,13 @@ class TestDirectorService:
         assert len(directors) > 0
 
     def test_create(self):
-        dict_director = {'name': 'Александр'}
+        dict_director = {'name': 'Director 1'}
         new_director = self.director_service.create(dict_director)
         print(new_director)
         assert new_director.id is not None
 
     def test_update(self):
-        dict_director = {'name': 'Александр'}
+        dict_director = {'name': 'Director 2'}
         update_director = self.director_service.update(dict_director)
         assert update_director is not None
 
